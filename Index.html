@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fexzagram Messenger</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="Fexzagram - Logo.png" alt="Fexzagram Logo">
+      <span>Fexzagram</span>
+    </div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#functions">Functions</a>
+      <a href="#api">API</a>
+      <a href="#faq">FAQ</a>
+      <a href="#apps">Apps</a>
+      <a href="#moderation">Moderation</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Fast. Secure. Estatic.</h1>
+      <p>Fexzagram — this modern open-source messenger by fexes1ze, created for freedom communication and new opportunities. Our main feature is FexzagramState — thanks to FexzagramState, you can chat with people from different messengers, for example: PubMess [Fexzagram client], VinBinMess, or Attack [Fexzagram client].</p>
+      <div class="hero-buttons">
+        <a href="#apps" class="btn-primary">Download</a>
+        <a href="#about" class="btn-secondary">More</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="Fexzagram-Logo.png" alt="Fexzagram App">
+    </div>
+  </section>
+
+  <section id="functions" class="features">
+    <h2>General opportunities</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>💬 Chats and groups</h3>
+        <p>Create dm, groups and channels with thousands of participants.</p>
+      </div>
+      <div class="feature">
+        <h3>📞 Voice and video</h3>
+        <p>Modern calls with protection and high connection stability.</p>
+      </div>
+      <div class="feature">
+        <h3>🌐 Open Source</h3>
+        <p>The source code is available thanks to Cmas — everything is completely transparent.</p>
+      </div>
+      <div class="feature">
+        <h3>⚙️ Bots and API</h3>
+        <p>Create smart bots, connect integrations and automatization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="api" class="api">
+    <h2>Fexzagram API</h2>
+    <p>API allows create bots, manage messages, profiles and get analytics.  
+    <a href="#">API documentation →</a></p>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>FAQ — Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>Can I use Fexzagram without registration?</h3>
+      <p>No, unfortunately, you’ll have to register.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Who create Fexzagram?</h3>
+      <p>Fexzagram created by fexes1ze — A technology enthusiast and the creator of Bloody_Projects.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Fexzagram is free?</h3>
+      <p>Yeah, full free and open-source.</p>
+    </div>
+  </section>
+
+  <section id="apps" class="download">
+    <h2>Download Fexzagram</h2>
+    <div class="download-buttons">
+      <a href="#" class="btn-primary">Windows</a>
+      <a href="#" class="btn-primary">Android</a>
+      <a href="#" class="btn-primary">iOS</a>
+      <a href="file:///C:/Users/SUser/OneDrive/Desktop/Fexzagram/Sites/Web/Desktop/Index.html" class="btn-primary">Web</a>
+    </div>
+  </section>
+
+  <section id="moderation" class="moderation">
+    <h2>Moderation - stats of bans</h2>
+    <canvas id="bansChart" width="400" height="200"></canvas>
+  </section>
+
+  <section class="registrations">
+    <h2>Users registration</h2>
+    <canvas id="usersChart" width="400" height="200"></canvas>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About project</h2>
+    <p><strong>Fexzagram</strong> — This is a project created by fexes1ze, inspired by the idea of freedom of communication, simplicity of interface, and open technologies.
+    Create in within system <strong>fexes1ze Technologies</strong>, but is independent product.</p>
+  </section>
+
+  <footer class="footer">
+    <p>© Fexzagram 2025. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const ctxBans = document.getElementById('bansChart').getContext('2d');
+    const bansChart = new Chart(ctxBans, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Bans quantity',
+          data: [0, 0, 0, 0, 0, 0, 0],
+          borderColor: '#229ED9',
+          backgroundColor: 'rgba(34, 158, 217, 0.1)',
+          tension: 0.3,
+          fill: true,
+          pointBackgroundColor: '#229ED9',
+          pointRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: true } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    const ctxUsers = document.getElementById('usersChart').getContext('2d');
+    const usersChart = new Chart(ctxUsers, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Users registered',
+          data: [0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 7, 0],
+          backgroundColor: '#36B3F1'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: true } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>
